@@ -3,6 +3,10 @@ monster = {'name': 'Booger Jones', 'attack': 12, 'health': 100}
 game_running = True
 
 while game_running == True:
+
+    player_won = False
+    monster_won = False
+
     print('Welcome to Monster Battle')
     print(f"1) Attack {monster['name']}")
     print("2) Heal yourself!")
@@ -17,8 +21,9 @@ while game_running == True:
         print(f'Ohh that healing feeling!\n')
         player['health'] = player['health'] + player['heal']
     else:
-        print('Sorry, game over sucka!')
-        game_running = False
+        print('Invalid input sucka!\n')
+        print(f"1) Attack {monster['name']}")
+        print("2) Heal yourself!")
 
     if monster['health'] <= 0:
         print(f"{player['name']} wins!! {monster['name']} FATALITY :)\n")
